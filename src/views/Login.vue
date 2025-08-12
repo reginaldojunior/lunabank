@@ -55,7 +55,7 @@ export default {
   methods: {
     async login() {
       try {
-        const res = await axios.post("https://3f4b00be35a1.ngrok-free.app/login", {
+        const res = await axios.post("https://pix-api-simulator-cc50fa0d09e3.herokuapp.com/login", {
           username: this.input.username,
           password: this.input.password,
         });

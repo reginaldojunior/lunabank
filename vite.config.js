@@ -10,8 +10,7 @@ export default defineConfig({
   ],
   server: {
     allowedHosts: [
-      'thin-cougar-95.telebit.io', // Libera o domínio externo
-      '3f4b00be35a1.ngrok-free.app' // Libera o domínio externo
+      'pix-api-simulator-cc50fa0d09e3.herokuapp.com' // Libera o domínio externo
     ],
     host: true, // Permite receber conexões externas
     port: 5173 // ou a porta que você estiver usando
