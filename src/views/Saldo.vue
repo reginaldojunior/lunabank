@@ -19,7 +19,7 @@ async function fetchCurrentSaldo() {
   try {
     const headers = { Authorization: `Bearer ${token}` }
 
-    const response = await axios.get('http://https://e4f6a4cff85c.ngrok-free.app/saldo', { headers })
+    const response = await axios.get('https://e4f6a4cff85c.ngrok-free.app/saldo', { headers })
     saldo.value = response.data
   } catch (error) {
     console.error('Error fetching saldo:', error)

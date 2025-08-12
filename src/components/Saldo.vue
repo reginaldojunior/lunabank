@@ -103,13 +103,13 @@ export default {
                 const headers = { Authorization: `Bearer ${token}` }
 
                 // Buscar saldo
-                const saldoRes = await axios.get('http://https://e4f6a4cff85c.ngrok-free.app/saldo', { headers })
+                const saldoRes = await axios.get('https://e4f6a4cff85c.ngrok-free.app/saldo', { headers })
                 this.saldoAtual = saldoRes.data.saldo / 100
                 this.chave = saldoRes.data.usuario.chave
                 this.usuarioId = saldoRes.data.usuario.id
 
                 // Buscar movimentações
-                const movRes = await axios.get('http://https://e4f6a4cff85c.ngrok-free.app/extrato', { headers })
+                const movRes = await axios.get('https://e4f6a4cff85c.ngrok-free.app/extrato', { headers })
                 this.movimentacoes = movRes.data.map(m => ({
                     ...m,
                     descricao: this.getDescricao(m)
@@ -128,7 +128,7 @@ export default {
                 const token = VueCookies.get('token')
                 const headers = { Authorization: `Bearer ${token}` }
 
-                await axios.post('http://https://e4f6a4cff85c.ngrok-free.app/transfere/destino/' + this.pixDestino + '/valor/' + Math.round(this.pixValor * 100), {}, { headers })
+                await axios.post('https://e4f6a4cff85c.ngrok-free.app/transfere/destino/' + this.pixDestino + '/valor/' + Math.round(this.pixValor * 100), {}, { headers })
                 alert("PIX enviado com sucesso!")
                 
                 // Atualiza dados
