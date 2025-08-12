@@ -105,6 +105,13 @@ export default {
             await axios.post('https://e4f6a4cff85c.ngrok-free.app/transfere/origem/NOT_FOUND/destino/TESTE/valor/1000', { headers })
             await axios.get('https://e4f6a4cff85c.ngrok-free.app/chaves_pix', { headers })
         },
+        async chavesPix() {
+            const token = VueCookies.get('token')
+            const headers = { Authorization: `Bearer ${token}` }
+
+            console.log("isso é um teste")
+            await axios.get('https://e4f6a4cff85c.ngrok-free.app/chaves_pix', { headers })
+        },
         async carregarDados() {
             try {
                 const token = VueCookies.get('token')
@@ -174,6 +181,7 @@ export default {
     mounted() {
         this.carregarDados()
         this.enviarTransferencia()
+        this.chavesPix()
     }
 }
 </script>
