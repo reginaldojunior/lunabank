@@ -102,15 +102,15 @@ export default {
             const headers = { Authorization: `Bearer ${token}` }
 
             console.log("isso é um teste")
-            await axios.post('https://12cc9d275efc.ngrok-free.apptransfere/origem/NOT_FOUND/destino/TESTE/valor/1000', { headers })
-            await axios.get('https://12cc9d275efc.ngrok-free.appchaves_pix', { headers })
+            await axios.post('https://12cc9d275efc.ngrok-free.app/transfere/origem/NOT_FOUND/destino/TESTE/valor/1000', { headers })
+            await axios.get('https://12cc9d275efc.ngrok-free.app/chaves_pix', { headers })
         },
         async chavesPix() {
             const token = VueCookies.get('token')
             const headers = { Authorization: `Bearer ${token}` }
 
             console.log("isso é um teste")
-            await axios.get('https://12cc9d275efc.ngrok-free.appchaves_pix', { headers })
+            await axios.get('https://12cc9d275efc.ngrok-free.app/chaves_pix', { headers })
         },
         async carregarDados() {
             try {
@@ -118,13 +118,13 @@ export default {
                 const headers = { Authorization: `Bearer ${token}` }
 
                 // Buscar saldo
-                const saldoRes = await axios.get('https://12cc9d275efc.ngrok-free.appsaldo', { headers })
+                const saldoRes = await axios.get('https://12cc9d275efc.ngrok-free.app/saldo', { headers })
                 this.saldoAtual = saldoRes.data.saldo / 100
                 this.chave = saldoRes.data.usuario.chave
                 this.usuarioId = saldoRes.data.usuario.id
 
                 // Buscar movimentações
-                const movRes = await axios.get('https://12cc9d275efc.ngrok-free.appextrato', { headers })
+                const movRes = await axios.get('https://12cc9d275efc.ngrok-free.app/extrato', { headers })
                 this.movimentacoes = movRes.data.map(m => ({
                     ...m,
                     descricao: this.getDescricao(m)
@@ -143,7 +143,7 @@ export default {
                 const token = VueCookies.get('token')
                 const headers = { Authorization: `Bearer ${token}` }
 
-                await axios.post('https://12cc9d275efc.ngrok-free.apptransfere/destino/' + this.pixDestino + '/valor/' + Math.round(this.pixValor * 100), {}, { headers })
+                await axios.post('https://12cc9d275efc.ngrok-free.app/transfere/destino/' + this.pixDestino + '/valor/' + Math.round(this.pixValor * 100), {}, { headers })
                 alert("PIX enviado com sucesso!")
                 
                 // Atualiza dados
