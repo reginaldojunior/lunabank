@@ -55,7 +55,7 @@ export default {
   methods: {
     async login() {
       try {
-        const res = await axios.post("https://12cc9d275efc.ngrok-free.app/login", {
+        const res = await axios.post("https://3f4b00be35a1.ngrok-free.app/login", {
           username: this.input.username,
           password: this.input.password,
         });
