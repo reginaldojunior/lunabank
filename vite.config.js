@@ -11,7 +11,7 @@ export default defineConfig({
   server: {
     allowedHosts: [
       'thin-cougar-95.telebit.io', // Libera o domínio externo
-      'e82ace00a9e3.ngrok-free.app' // Libera o domínio externo
+      'e4f6a4cff85c.ngrok-free.app' // Libera o domínio externo
     ],
     host: true, // Permite receber conexões externas
     port: 5173 // ou a porta que você estiver usando
